@@ -15,7 +15,7 @@ public class 敵人 : MonoBehaviour
 
     private Animator anim;
 
-    private void Awake()
+    private void Start()
     {
         anim = GetComponent<Animator>();
     }
@@ -36,9 +36,7 @@ public class 敵人 : MonoBehaviour
 
     private bool PlayerInSight()
     {
-        RaycastHit2D hit = Physics2D.BoxCast(CircleCollider.bounds.center + transform.right * range * transform.localScale.x * colliderDistance,
-        new Vector3(CircleCollider.bounds.size.x * range, CircleCollider.bounds.size.y, CircleCollider.bounds.size.z),
-        0, Vector2.left, 0, PlayerLayer);
+        RaycastHit2D hit = Physics2D.BoxCast(CircleCollider.bounds.center + transform.right * range * transform.localScale.x * colliderDistance,new Vector3(CircleCollider.bounds.size.x * range, CircleCollider.bounds.size.y, CircleCollider.bounds.size.z), 0, Vector2.left, 0, PlayerLayer);
 
         return hit.collider != null;
     }
