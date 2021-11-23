@@ -550,9 +550,9 @@ GameObject:
   - component: {fileID: 373702023}
   - component: {fileID: 373702022}
   - component: {fileID: 373702021}
-  - component: {fileID: 373702024}
   - component: {fileID: 373702025}
   - component: {fileID: 373702026}
+  - component: {fileID: 373702024}
   m_Layer: 3
   m_Name: "\u5C0F\u7D05\u5E3D"
   m_TagString: Untagged
@@ -638,7 +638,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 373702020}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.455, y: 0, z: 0}
+  m_LocalPosition: {x: -7.56, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -653,13 +653,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 373702020}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 260d3c0deef40c4409bb5afe3e0154a7, type: 3}
+  m_Script: {fileID: 11500000, guid: 3acb0b98c99bc2f4bac5e8dce78a8a64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MovementSpeed: 6
-  JumpForce: 24
-  animator: {fileID: 373702021}
-  anim: {fileID: 373702021}
+  speed: 3.5
+  jump: 300
 --- !u!50 &373702025
 Rigidbody2D:
   serializedVersion: 4
@@ -791,7 +789,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.455, y: 0, z: -10}
+  m_LocalPosition: {x: -7.56, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -48175,7 +48173,6 @@ GameObject:
   - component: {fileID: 967066618}
   - component: {fileID: 967066617}
   - component: {fileID: 967066619}
-  - component: {fileID: 967066620}
   m_Layer: 0
   m_Name: "\u53F2\u840A\u59C6"
   m_TagString: Untagged
@@ -48337,34 +48334,19 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 967066612}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 734c70b61bdff0342bae2a6a59bf5b2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackCooldown: 2
-  range: -2.55
-  colliderDistance: 1.36
-  damage: 1
+  attackCooldown: 1
+  range: 1.26
+  colliderDistance: -1.39
+  damage: 0
   CircleCollider: {fileID: 967066618}
   PlayerLayer:
     serializedVersion: 2
     m_Bits: 0
---- !u!114 &967066620
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 967066612}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1dddcc91c544fa945824dc40167e864f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  points: []
-  nextID: 0
-  speed: 2
 --- !u!1 &1072168767
 GameObject:
   m_ObjectHideFlags: 0
@@ -49389,7 +49371,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2023415167}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.455, y: 0, z: -10}
+  m_LocalPosition: {x: -7.56, y: 0, z: -10}
   m_LocalScale: {x: 1.32, y: 1, z: 1}
   m_Children:
   - {fileID: 266829792}
