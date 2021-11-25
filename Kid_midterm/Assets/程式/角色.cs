@@ -8,11 +8,11 @@ public class 角色 : MonoBehaviour
     public float JumpForce = 15;
     public Animator animator;
     public Animator anim;
-    private Rigidbody2D _rigidbody;
+    public Rigidbody2D rb;
 
     public void Start()
     {
-        _rigidbody = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
 
@@ -29,20 +29,20 @@ public class 角色 : MonoBehaviour
 
 
 
-        if (Input.GetButtonDown("Jump") && Mathf.Abs(_rigidbody.velocity.y) < 0.001f)
+        if (Input.GetButtonDown("Jump") && Mathf.Abs(rb.velocity.y) < 0.001f)
         {
-            _rigidbody.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
+            rb.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
             animator.SetBool("跳躍", true);
         }
-        if (_rigidbody.velocity.y == 0)
+        if (rb.velocity.y == 0)
         {
             anim.SetBool("跳躍", false);
         }
-        if (_rigidbody.velocity.y > 0)
+        if (rb.velocity.y > 0)
         {
             anim.SetBool("跳躍", true);
         }
-        if (_rigidbody.velocity.y < 0)
+        if (rb.velocity.y < 0)
         {
             anim.SetBool("跳躍", true);
         }
