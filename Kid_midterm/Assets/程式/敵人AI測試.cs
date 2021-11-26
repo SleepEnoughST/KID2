@@ -14,10 +14,14 @@ public class 敵人AI測試 : MonoBehaviour
     public LayerMask GroundLayer;
     public Collider2D bodyCollider;
 
+    public static bool isAttacking = false;
+    public Animator anim;
+
 
     void Start()
     {
         mustPatrol = true;
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -27,6 +31,11 @@ public class 敵人AI測試 : MonoBehaviour
         {
             Patrol();
         }
+
+        if (isAttacking)
+            anim.SetBool("觸發攻擊", true);
+        else
+            anim.SetBool("觸發攻擊", false);
     }
     private void FixedUpdate()
     {
