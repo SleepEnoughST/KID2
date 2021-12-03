@@ -157,7 +157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 89.3, y: -25.7}
+  m_AnchoredPosition: {x: 89.29999, y: -25.699951}
   m_SizeDelta: {x: 200, y: 20}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &106364838
@@ -398,7 +398,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 89.29999, y: -25.700012}
+  m_AnchoredPosition: {x: 89.29999, y: -25.699951}
   m_SizeDelta: {x: 200, y: 20}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &290969992
@@ -638,7 +638,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 373702020}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.56, y: 0, z: 0}
+  m_LocalPosition: {x: -7.56, y: 0.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -657,13 +657,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  jump: 300
+  jump: 1500
   checkGroundRadius: 0.149
   checkGroundOffset: {x: 0.35, y: -1.16, z: 0}
   keyjump: 32
   canJumpLayer:
     serializedVersion: 2
     m_Bits: 128
+  parameterWalk: "\u89D2\u8272\u8D70\u8DEF"
+  parameterJump: "\u89D2\u8272\u8DF3\u8E8D"
+  IsGround: 0
+  jumpCount: 0
+  jumpPress: 0
 --- !u!50 &373702025
 Rigidbody2D:
   serializedVersion: 4
@@ -795,7 +800,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.56, y: 0, z: -10}
+  m_LocalPosition: {x: -7.56, y: 0.04, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -48264,7 +48269,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 967066612}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.5, y: 0.4, z: 0}
+  m_LocalPosition: {x: 8.5, y: -0.27, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children:
   - {fileID: 1745962193}
@@ -49419,7 +49424,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2023415167}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.56, y: 0, z: -10}
+  m_LocalPosition: {x: -7.56, y: 0.04, z: -10}
   m_LocalScale: {x: 1.32, y: 1, z: 1}
   m_Children:
   - {fileID: 266829792}
