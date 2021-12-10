@@ -49647,7 +49647,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fad2b52f4a872547b0bafd09c3044ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interval: 0.2
+  interval: 0.1
   goDialogue: {fileID: 373299854}
   textContent: {fileID: 2125310498}
 --- !u!4 &2080201836
@@ -49803,7 +49803,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 44ef8d7bd515d9a4caf5ea880d2985bc, type: 3}
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 18
     m_FontStyle: 0
     m_BestFit: 0

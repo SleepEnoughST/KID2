@@ -21,9 +21,12 @@ public class 對話系統 : MonoBehaviour
     {
         string test = "哈囉，肉腳~你們好啊~~";
 
+        textContent.text = "";
+        goDialogue.SetActive(true);
+
         for (int i =0; i< test.Length; i++)
         {
-            print(test[i]);
+            textContent.text += (test[i]);
             yield return new WaitForSeconds(interval);
         }
     }
