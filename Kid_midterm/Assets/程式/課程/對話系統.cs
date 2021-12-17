@@ -52,13 +52,14 @@ public class 對話系統 : MonoBehaviour
         goDialogue.SetActive(false);
     }
     
-    public void StartDialogue()
+    public void StartDialogue(string[] contents)
     {
-
+            StartCoroutine(TypeEffect(contents));
     }
 
     public void StopDialogue()
     {
-
+        StopAllCoroutines();
+        goDialogue.SetActive(false);
     }
 }

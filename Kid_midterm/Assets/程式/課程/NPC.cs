@@ -15,8 +15,14 @@ public class NPC : MonoBehaviour
     {
         if (collision.name == target)
         {
-            print(collision.name);
-            print("¥m©N¡I");
+            dialogueSystem.StartDialogue(dataDialogue.dialogues);
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.name == target)
+        {
+            dialogueSystem.StopDialogue();
         }
     }
 }
