@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class 對話框系統 : MonoBehaviour
 {
+    public GameObject move;
+    public GameObject talk;
     [Header("UI組件")]
     public Text textLabel;
     public Image faceImage;
@@ -32,12 +34,19 @@ public class 對話框系統 : MonoBehaviour
         {
             gameObject.SetActive(false);
             index = 0;
+            move.SetActive(true);
+            talk.SetActive(true);
             return;
         }
         if (Input.GetKeyDown(KeyCode.Z))
         {
             textLabel.text = textList[index];
             index++;
+        }
+        if (Input.GetKey(KeyCode.Z))
+        {
+            move.SetActive(false);
+            talk.SetActive(false);
         }
     }
 

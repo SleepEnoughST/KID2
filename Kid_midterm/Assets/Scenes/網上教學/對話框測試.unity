@@ -582,6 +582,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f791f605d8e260498e5688f18ca99ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  move: {fileID: 373702020}
+  talk: {fileID: 1451427951}
   textLabel: {fileID: 2125310498}
   faceImage: {fileID: 0}
   textFile: {fileID: 4900000, guid: 82bb3eb359148cf47b6002daa323bdca, type: 3}
@@ -49910,6 +49912,10 @@ PrefabInstance:
     - target: {fileID: 4482312449849038058, guid: 510d7a79cd65f504f90e194b8a42b560, type: 3}
       propertyPath: jump
       value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482312449849038058, guid: 510d7a79cd65f504f90e194b8a42b560, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 510d7a79cd65f504f90e194b8a42b560, type: 3}
