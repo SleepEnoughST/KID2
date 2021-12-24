@@ -7,6 +7,7 @@ public class 對話框系統 : MonoBehaviour
 {
     public GameObject move;
     public GameObject talk;
+    public 課程 A;
     [Header("UI組件")]
     public Text textLabel;
     public Image faceImage;
@@ -34,8 +35,7 @@ public class 對話框系統 : MonoBehaviour
         {
             gameObject.SetActive(false);
             index = 0;
-            move.SetActive(true);
-            talk.SetActive(true);
+            A.GetComponent<課程>().enabled = true;
             return;
         }
         if (Input.GetKeyDown(KeyCode.Z))
@@ -43,11 +43,7 @@ public class 對話框系統 : MonoBehaviour
             textLabel.text = textList[index];
             index++;
         }
-        if (Input.GetKey(KeyCode.Z))
-        {
-            move.SetActive(false);
-            talk.SetActive(false);
-        }
+        A.GetComponent<課程>().enabled = false;
     }
 
     void GetTextFormFile(TextAsset file)

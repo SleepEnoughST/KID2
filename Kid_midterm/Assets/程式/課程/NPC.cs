@@ -11,12 +11,15 @@ public class NPC : MonoBehaviour
     [Header("觸發對話的對象")]
     public string target = "小紅帽";
 
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
         if (collision.name == target)
         {
             dialogueSystem.StartDialogue(dataDialogue.dialogues);
         }
+           
     }
     private void OnTriggerExit2D(Collider2D collision)
     {

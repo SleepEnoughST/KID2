@@ -12,5 +12,74 @@ public class enemy : MonoBehaviour
     public float speed = 1.5f;
     [Header("目標圖層")]
     public LayerMask layerTarget;
+    [Header("動畫參數")]
+    public string enemyWalk = "切換滑";
+    [Header("面向目標物件")]
+    public Transform target;
+
+    private float angle = 0;
+    private Rigidbody2D rb;
+    private Animator anim;
+    #endregion
+
+    #region 事件
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
+    }
+
+    private void OnDrawGizmos()
+    {
+        //指定圖示的顏色
+        Gizmos.color = new Color(1, 0, 0, 0.3f);
+        //繪製立方體(中心，尺寸)
+        Gizmos.DrawCube(transform.position +transform.TransformDirection(v3TrackOffset), v3TrackSize);
+    }
+
+    private void Update()
+    {
+        CheckTargetInArea();
+    }
+    #endregion
+
+    #region 方法
+    /// <summary>
+    /// 檢查目標是否在區域內
+    /// </summary>
+    private void CheckTargetInArea()
+    {
+        Collider2D hit = Physics2D.OverlapBox(transform.position + transform.TransformDirection(v3TrackOffset), v3TrackSize, 0, layerTarget);
+
+        if (hit)
+        {
+            Move();
+        }
+        else
+        {
+            anim.SetBool(enemyWalk, false);
+        }
+    }
+    private void Move()
+    {
+        //如果 目標的 X 小於 敵人的 X 就代表在左邊 角度 0
+        //如果 目標的 X 大於 敵人的 X 就代表在右邊 角度 180
+        if (target.position.x > transform.position.x)
+        {
+            // 右邊 angle = 180
+        }
+        else if (target.position.x < transform.position.x)
+        {
+            // 左邊 angle = 0
+        }
+
+        //三元運算子語法：布林值 ? (當布林值 為 true) : (當布林值 為 false) ;
+        angle = target.position.x > transform.position.x ? 180 : 0;
+
+        transform.eulerAngles = Vector3.up * angle;
+
+        rb.velocity =transform.TransformDirection( new Vector2(-speed, rb.velocity.y));
+        anim.SetBool(enemyWalk, true);
+    }
     #endregion
 }

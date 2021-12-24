@@ -20,7 +20,7 @@ public class 對話系統 : MonoBehaviour
     {
         //StartCoroutine(TypeEffect());
     }
-    
+
     private IEnumerator TypeEffect(string[] contents)
     {
         //string test1 = "哈囉，肉腳~你們好啊~~";
@@ -29,6 +29,7 @@ public class 對話系統 : MonoBehaviour
         //string[] contents = { test1, test2 };
 
         goDialogue.SetActive(true);
+        
 
         for (int j = 0; j < contents.Length; j++)
         {
