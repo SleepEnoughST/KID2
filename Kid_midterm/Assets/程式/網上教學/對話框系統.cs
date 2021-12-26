@@ -15,6 +15,12 @@ public class 對話框系統 : MonoBehaviour
     [Header("文字文件")]
     public TextAsset textFile;
     public int index;
+    public float textSpeed = 0.1f;
+
+    bool textFinished;
+
+    [Header("頭像")]
+    public Sprite face01, face02;
 
     List<string> textList = new List<string>();
 
@@ -25,8 +31,9 @@ public class 對話框系統 : MonoBehaviour
 
     private void OnEnable()
     {
-        textLabel.text = textList[index];
-        index++;
+        //textLabel.text = textList[index];
+        //index++;
+        StartCoroutine(SetTextUI());
     }
     // Update is called once per frame
     void Update()
@@ -38,10 +45,11 @@ public class 對話框系統 : MonoBehaviour
             A.GetComponent<課程>().enabled = true;
             return;
         }
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.Z) && textFinished)
         {
-            textLabel.text = textList[index];
-            index++;
+            //textLabel.text = textList[index];
+            //index++;
+            StartCoroutine(SetTextUI());
         }
         A.GetComponent<課程>().enabled = false;
     }
@@ -57,5 +65,32 @@ public class 對話框系統 : MonoBehaviour
         {
             textList.Add(line);
         }
+    }
+    
+    IEnumerator SetTextUI()
+    {
+        textFinished = false;
+        textLabel.text = "";
+
+        switch (textList[index])
+        {
+            case "A":
+                faceImage.sprite = face01;
+                index++;
+                break;
+            case "B":
+                faceImage.sprite = face02;
+                index++;
+                break;
+        }
+
+        for (int i = 0; i < textList[index].Length; i++)
+        {
+            textLabel.text += textList[index][i];
+
+            yield return new WaitForSeconds(textSpeed);
+        }
+        textFinished = true;
+        index++;
     }
 }
