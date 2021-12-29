@@ -90,19 +90,30 @@ public class 課程 : MonoBehaviour
 
     private void Jump()
     {
-        
+
         if (IsGround)
         {
             jumpCount = 0;
-
-            if (Input.GetKeyDown(keyjump) && jumpCount < 2)
+            if (Input.GetKeyDown(keyjump))
+            {
+                rb2D.AddForce(new Vector2(0, jump));
+                jumpCount++;
+                jumpPress = true;
+            }
+        }
+        else
+        {
+            if (Input.GetKeyDown(keyjump) && jumpCount <= 1)
             {
                 rb2D.AddForce(new Vector2(0, jump));
                 jumpCount++;
                 jumpPress = true;
             }
 
-            
+            if (Input.GetKeyDown(keyjump) && jumpCount >= 1)
+            {
+                jumpPress = false;
+            }
         }
     }
     #endregion

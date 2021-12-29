@@ -18,6 +18,7 @@ public class 對話框系統 : MonoBehaviour
     public float textSpeed = 0.1f;
 
     bool textFinished;
+    bool cancelTyping;
 
     [Header("頭像")]
     public Sprite face01, face02;
@@ -45,11 +46,23 @@ public class 對話框系統 : MonoBehaviour
             A.GetComponent<課程>().enabled = true;
             return;
         }
-        if (Input.GetKeyDown(KeyCode.Z) && textFinished)
-        {
+        //if (Input.GetKeyDown(KeyCode.Z) && textFinished)
+        //{
             //textLabel.text = textList[index];
             //index++;
-            StartCoroutine(SetTextUI());
+            //StartCoroutine(SetTextUI());
+        //}
+
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            if (textFinished && !cancelTyping)
+            {
+                StartCoroutine(SetTextUI());
+            }
+            else if (!textFinished && !cancelTyping)
+            {
+                cancelTyping = true;
+            }
         }
         A.GetComponent<課程>().enabled = false;
     }
@@ -90,6 +103,16 @@ public class 對話框系統 : MonoBehaviour
 
             yield return new WaitForSeconds(textSpeed);
         }
+
+        int letter = 0;
+        while(!cancelTyping && letter < textList[index].Length -1)
+        {
+            textLabel.text += textList[index][letter];
+            letter++;
+            yield return new WaitForSeconds(textSpeed);
+        }
+        textLabel.text = textList[index];
+        cancelTyping = false;
         textFinished = true;
         index++;
     }
