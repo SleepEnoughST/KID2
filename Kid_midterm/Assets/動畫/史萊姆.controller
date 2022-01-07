@@ -84,10 +84,7 @@ AnimatorStateTransition:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 
-  m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: "\u89F8\u767C\u653B\u64CA"
-    m_EventTreshold: 0
+  m_Conditions: []
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -8405825927566675433}
   m_Solo: 0
@@ -116,13 +113,13 @@ AnimatorStateMachine:
     m_Position: {x: 260, y: -160, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 8125225879554033572}
-    m_Position: {x: 210, y: 80, z: 0}
+    m_Position: {x: 200, y: 80, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3989746754274831702}
     m_Position: {x: 400, y: 150, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1550302436143382305}
-    m_Position: {x: 470, y: -20, z: 0}
+    m_Position: {x: 450, y: 0, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: 824190854331786123}
